@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+
+// Pass by reference using pointers
+
+void change(int *ptr){
+    *ptr= 10;
+    cout << "Inside function: " << *ptr<< endl;
+}
+
+int main()
+{
+    int a = 7;
+    change(&a);
+
+    cout << "Inside main: " << a<< endl;
+
+    return 0;
+}
