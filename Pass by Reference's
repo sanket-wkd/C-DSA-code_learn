@@ -1,1 +1,21 @@
+#include<iostream>
+using namespace std;
+
+// pass  by value
+
+void change(int a)
+{
+  a = 10;
+  cout << "Inside function: " << a << endl;
+}
+
+int main()
+{
+   int a = 7;
+   change(a);
+
+    cout << "Inside main: " << a << endl;
+
+    return 0;
+}
 
