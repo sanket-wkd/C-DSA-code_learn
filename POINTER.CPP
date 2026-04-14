@@ -11,13 +11,20 @@ int main ()
     cout<<&a<<endl;
     cout<<&ptr<<endl;//0x61ff08
 
-   // Pointer to pointers
+ // Pointer to pointers
 
     int **parptr =&ptr;
      
     cout<<&ptr<<endl;//0x61ff08
     cout<<parptr<<endl;//0x61ff08
     cout<<&parptr<<endl;//0x61ff04
+
+// Deferencing operators
+
+    cout<<*(ptr)<<endl;//10
+    cout<<*(parptr)<<endl;//0x61ff0c
+    cout<<**(parptr)<<endl;//10
+    
 
     return 0;
 }
