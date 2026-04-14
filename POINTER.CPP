@@ -9,7 +9,15 @@ int main ()
 
     cout<<ptr<<endl;// same out put as as &a
     cout<<&a<<endl;
-    cout<<&ptr<<endl;
+    cout<<&ptr<<endl;//0x61ff08
+
+   // Pointer to pointers
+
+    int **parptr =&ptr;
+     
+    cout<<&ptr<<endl;//0x61ff08
+    cout<<parptr<<endl;//0x61ff08
+    cout<<&parptr<<endl;//0x61ff04
 
     return 0;
 }
