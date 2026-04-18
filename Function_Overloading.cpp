@@ -6,11 +6,17 @@ T Addition (T X, T Y)
 {
     return X+Y;
 }
+
+float Addition(float X, float Y)
+{
+    return X + Y;
+}
+
 int main()
 {
     cout<<"Addition of Float values: "<<Addition<float>(5.2,9.3)<<endl;
     cout<<"Addition of int values: "<<Addition<int>(5,9)<<endl;
-    cout<<"Addition of double values: "<<Addition<double>(5.235468,9.3588)<<endl;
-  
+    //cout<<"Addition of double values: "<<Addition<double>(5.235468,9.3588)<<endl;
+  //since we not create double function cause error get lengthy so use templete
     return 0;
 }
