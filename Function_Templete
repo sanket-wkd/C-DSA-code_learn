@@ -1,0 +1,19 @@
+// this solve the problem of function overloading just by using  templete
+
+
+#include<iostream>
+using namespace std;
+
+template<typename T>
+T Addition (T X, T Y)
+{
+    return X+Y;
+}
+int main()
+{
+    cout<<"Addition of Float values: "<<Addition<float>(5.2,9.3)<<endl;
+    cout<<"Addition of int values: "<<Addition<int>(5,9)<<endl;
+    cout<<"Addition of double values: "<<Addition<double>(5.235468,9.3588)<<endl;
+  
+    return 0;
+}
