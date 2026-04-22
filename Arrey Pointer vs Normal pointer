@@ -7,7 +7,9 @@ using namespace std;
 int main()
 {
     int a = 10;
-    int *p = &a; // assign pointer to to store address
+    int *p = &a;
+
+    // assign pointer to to store address
     // *p correct p* wrong
 
     cout << "The value of a :" << a << endl;//10
@@ -27,7 +29,10 @@ using namespace std;
 int main()
 {
     int arr[3] = {10, 20, 30};
-    int *p = arr; // assing pointer to constant pointer
+    int *p = arr; 
+
+    // assing pointer to constant pointer
+    //rememberno need to use "&"
 
     cout << *p << endl;       // 10
     cout << *(p + 1) << endl; // 20
@@ -46,7 +51,9 @@ using namespace std;
 int main()
 {
     int arr[3] = {100, 200, 300};
-    int (*p)[3] = &arr; // points toward hole pointer
+    int (*p)[3] = &arr;
+    
+    // points toward hole pointer
 
     cout << (*p)[0] << endl; // 100
     cout << (*p)[1] << endl; // 200
