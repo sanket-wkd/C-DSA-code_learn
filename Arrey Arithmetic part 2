@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int arr[3] = {10, 20, 30};
+
+    int *p1 = &arr[0];
+    int *p2 = &arr[1];
+    int *p3 = &arr[2];
+
+    cout << "Address of arr[0]:" << p1 << endl; // 0x61fef8
+    cout << "Address of arr[1]:" << p2 << endl; // 0x61fefc
+    cout << "Address of arr[2]:" << p3 << endl; // 0x61ff00
+
+    cout << "The value of pointer p1 : " << *p1 << endl; // 10
+    cout << "The value of pointer p2 : " << *p2 << endl; // 20
+    cout << "The value of pointer p3 : " << *p3 << endl; // 30
+
+    // compare pointers
+    if (p1 < p2)
+        cout << "p2 is greater then p1" << endl;
+
+    if (p2 < p3)
+        cout << " p3 is greater than p2 " << endl;
+
+    if (p1 != p3)
+        cout << "P1 and P3 are different " << endl;
+
+    return 0;
+}
+/* Memory just foe an example
+arr[0] → 1000 → 10
+arr[1] → 1004 → 20
+arr[2] → 1008 → 30
+
+Relationals operator cas be apply on pointers
+( < , > , <= , >= , == ,!= )
+
+*/
