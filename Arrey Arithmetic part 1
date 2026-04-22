@@ -1,0 +1,18 @@
+//Remember syntex *ptr and*(ptr + 1)
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5};
+    int *p = arr;
+
+    cout << *p << endl;       // 10
+    cout << *(p + 1) << endl; // 20
+    cout << *(p + 2) << endl; // 30
+    cout << *(p + 3) << endl; // 40
+    cout << *(p + 4) << endl; // 50
+
+    return 0;
+}
