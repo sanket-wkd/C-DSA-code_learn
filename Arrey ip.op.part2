@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    int index = 0;
+    int size;
+    cout << "Enter the size :" << endl;
+    cin >> size;
+
+    vector<int> arr(size); // to avoid infinite size use(size)
+
+    // for input
+    // here i in this loop is element not index
+    for (int &i : arr)
+    {
+        cout << "Enter the value of " << index << " elements of arrey :" << endl;
+        cin >> i;
+        index++;
+    }
+
+    // for output
+    for (int i = 0; i < size; i++)
+    {
+        cout << "Arrey " << i << " element is :" << arr[i] << endl;
+    }
+
+    return 0;
+}
