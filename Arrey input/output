@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int size;
+    //  int arrey[size]; wrong
+
+    cout << "Enter the size of arrey you want :" << endl;
+    cin >> size;
+
+    int arrey[size]; // declare after taking inputs
+
+    // another way to take inputs
+    //  for (int i = 0; i < size; i++)
+    //  {
+    //      cout << "Enter the " << i << " element of arrey : " << endl;
+    //      cin >> arrey[i];
+    //  }
+
+    // input using advanced for loop (with reference)
+    for (int &x : arrey)
+    {
+        cout << "Enter element: ";
+        cin >> x;
+    }
+
+    cout << "The arrey elements are :" << endl;
+
+    for (int i : arrey)
+    {
+        cout << i << endl;
+    }
+
+    return 0;
+}
