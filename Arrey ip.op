@@ -4,12 +4,17 @@ using namespace std;
 int main()
 {
     int size;
+
     //  int arrey[size]; wrong
 
     cout << "Enter the size of arrey you want :" << endl;
     cin >> size;
 
+
+
     int arrey[size]; // declare after taking inputs
+
+
 
     // another way to take inputs
     //  for (int i = 0; i < size; i++)
@@ -18,8 +23,11 @@ int main()
     //      cin >> arrey[i];
     //  }
 
+
+
+
     // input using advanced for loop (with reference)
-    for (int &x : arrey)
+    for (int &x : arrey)  // x points each block // each block treated as pointer//points towards address
     {
         cout << "Enter element: ";
         cin >> x;
@@ -34,3 +42,19 @@ int main()
 
     return 0;
 }
+
+
+/*
+int a = 10;
+    int *p = &a;
+cout << p<<endl;
+it gives the value stored at p 
+
+ below from CHAT GPT
+| Loop type                 | Use                                   |
+| ------------------------- | ------------------------------------- |
+| `for (int i=0; i<n; i++)` | ✅ input + index access                |
+| `for (int x : arr)`       | ❌ not for input (only reading values) |
+
+
+*/
