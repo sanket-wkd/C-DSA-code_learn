@@ -1,0 +1,38 @@
+//finding the maxium and minium number from any arrey
+
+// write max term from the arrey
+#include <iostream>
+#include <climits>//to take INT_MAX  and INT_MIN
+using namespace std;
+
+int main()
+{
+    int size;
+    cout << "Enter the size of an arrey :" << endl;
+    cin >> size;
+
+    int arrey[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << "Enter the " << i << " elements of the arrey :" << endl;
+        cin >> arrey[i];
+    }
+
+    int maxium = INT_MIN;
+    int minium = INT_MAX;
+    for (int i : arrey)
+    {
+        maxium = max(maxium, i);
+    }
+    cout << "The maxium number is " << maxium << endl;
+
+    for (int j : arrey)
+    {
+        minium = min(minium, j);
+    }
+
+    cout << "THe minium number in the arrey is : " << minium << endl;
+
+    return 0;
+}
