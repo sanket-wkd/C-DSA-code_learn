@@ -1,0 +1,44 @@
+//Advance object and pte
+#include <iostream>
+using namespace std;
+
+class Student
+{
+public:
+    string Name;
+};
+
+int main()
+{
+    // declare pointer// store the address of class(has blueprint)
+    Student *s;
+
+    // create an object
+    s = new Student();
+
+    // can be done in single line  // Student* s= new Student()//create an oj call the constructor
+
+    cout << "Enter the name :" << endl;
+    cin >> s->Name; // pointer object ->
+
+    cout << "Your name is :" << s->Name;
+
+    // free memory
+    delete s;
+
+    return 0;
+}
+
+/*
+
+-> is used with pointers to access members (data/functions) of an object.
+
+
+| Feature  | Stack (Normal Object) | Heap (`new`)    |
+| -------- | --------------------- | --------------- |
+| Memory   | Automatic             | Manual          |
+| Creation | `Student s1;`         | `new Student()` |
+| Access   | `.`                   | `->`            |
+| Delete   | Auto                  | Need `delete`   |
+
+*/
