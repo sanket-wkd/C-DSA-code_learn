@@ -1,0 +1,23 @@
+//Normal objects and normal pointer 
+
+#include <iostream>
+using namespace std;
+
+class Student
+{
+public:
+    string Name;
+};
+
+int main()
+{
+    Student s1; // create an objects
+
+    cout << "ENter the name :" << endl;
+    cin >> s1.Name;
+
+    cout << " Your name is :" << s1.Name << endl;
+    // simply name wrong //s1.name i.e name(just an variable) taken from the object s1
+
+    return 0;
+}
