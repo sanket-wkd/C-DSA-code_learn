@@ -1,0 +1,108 @@
+#include <iostream>
+using namespace std;
+
+class Node
+{ // we want a empty dot and update value and again create a null
+public:
+    int data;
+    Node *next;
+
+    Node(int value)
+    {
+        data = value;
+        next = NULL;
+    }
+};
+
+class List
+{        // initally both head and tail are  point at null
+private: // the most imp in ll is hand t
+    Node *head;
+    Node *tail;
+
+public:
+    List() // constructor
+    {
+        head = tail = NULL; // initally h andt are zero
+    }
+
+    void push_front(int value)
+    {
+        Node *newNode = new Node(value); // dynamic memory
+                                         //  Node newNode(value);  not use becaude:
+                                         // static//another way to create
+
+        // if link list is empty then
+        if (head == NULL)
+        {
+            head = tail = newNode;
+            return; // from the function
+        }
+        else
+        {
+            newNode->next = head; // value stored and name as head
+                                  //(since newNode is actually a new value)
+            head = newNode;
+        }
+    }
+
+    void push_back(int value)
+    {
+        Node *newNode = new Node(value);
+
+        if (head == NULL)
+        {
+            head = tail = newNode;
+        }
+        else
+        {
+            tail->next = newNode;
+            tail = newNode;
+        }
+    }
+
+    void printll()
+    {
+        Node *temp = head;
+        while (temp != NULL)
+        {
+            cout << temp->data << "  ";
+            temp = temp->next; // move to next node
+        }
+        cout << "NULL" << endl;
+    }
+};
+
+int main()
+{
+    int n, value, option;
+    List list; // create an objects
+
+    cout << "Enter the number of elements :" << endl;
+    cin >> n;
+
+    cout << "Enter the option :" << endl
+         << "1.push_front " << endl
+         << "2.push_back" << endl;
+    cin >> option;
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Enter the value :" << endl;
+        cin >> value;
+
+        if (option == 1)
+        {
+            list.push_front(value); // use object
+        }
+        else
+        {
+            list.push_back(value);
+        }
+    }
+
+    cout << "The link list is :" << endl;
+    list.printll();
+
+    return 0;
+}
