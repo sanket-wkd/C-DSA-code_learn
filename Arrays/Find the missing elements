@@ -1,0 +1,34 @@
+class Solution {
+public:
+    vector<int> findMissingElements(vector<int>& nums) {
+
+        int max = nums[0]; // value store in two container wrong
+        // two container have same value
+        int min = nums[0];
+
+        vector<int> seq;
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] < min) {
+                min = nums[i];
+            }
+
+            if (nums[i] > max)
+                max = nums[i];
+        }
+        for (int i = min; i < max; i++) {
+            bool is_Found = false;
+            for (int x : nums) {
+                if (i == x) {
+                    is_Found = true;
+                    break;
+                }
+            }
+
+            if (is_Found == false) {
+                seq.push_back(i);
+            }
+        }
+
+        return seq;
+    }
+};
