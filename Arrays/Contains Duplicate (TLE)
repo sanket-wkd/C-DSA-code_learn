@@ -1,0 +1,19 @@
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        for(int i=1;i<nums.size();i++){
+            bool first = true;
+            for(int x: nums){
+                if(nums[i] == x){
+                    if(first){
+                        first = false;  // skip the first match (itself)
+                    }
+                    else{
+                        return true;   // second match = duplicate
+                    }
+                }
+            }
+        }
+         return false;   // No duplicates found
+  }
+};
