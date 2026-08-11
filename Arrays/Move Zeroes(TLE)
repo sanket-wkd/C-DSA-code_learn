@@ -1,0 +1,55 @@
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        for(int i = 0;i<nums.size();i++){
+            if(nums[i] == 0){
+                nums.erase(nums.begin()+i);
+                nums.push_back(0);
+               i--; 
+            }
+        }
+     
+    }
+};
+/*
+nums.pop_back();
+Result:
+[0, 1, 0, 3]
+          ↑
+       12 deleted
+
+| Function     | What it deletes                     |
+| ------------ | ----------------------------------- |
+| `pop_back()` | **Last element only**               |
+| `erase()`    | **Element at a specified position** |
+| `clear()`    | **Everything**                      |
+
+Because after erase(), the elements shift left.
+nums = [1, 0, 0, 3]
+          ↑
+        i = 1
+
+i = 1
+i-- → 0
+
+initally  i++
+then i--
+due which we stay at a perticular point(position)
+
+You want to delete the element at index i.
+
+So use:
+nums.erase(nums.begin() + i);
+instead of:
+nums.erase(nums.begin());
+
+nums = [1, 0, 3, 12, 0]
+        ↑  ↑
+       i=0 i=1
+
+[1, 0, 3, 12, 0]
+     ↑
+   nums[1]
+[1, 0, 3, 12, 0]
+ ↑
+index 0 → 1 gets deleted
