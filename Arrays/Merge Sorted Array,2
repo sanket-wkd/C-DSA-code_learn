@@ -1,0 +1,36 @@
+/*
+for ( int j = 0, i = m ; j < n ; j++ )
+     └───────────────┘   └───┘   └─┘
+       initialization    condition update
+*/
+
+
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        for (int j = 0, i = m; j<n; j++){
+            nums1[i] = nums2[j];
+            i++;
+        }
+        sort(nums1.begin(),nums1.end());
+    }
+};
+/* flow chart:-
+START
+  ↓
+Input nums1, nums2, m, n
+  ↓
+i = m, j = 0
+  ↓
+Is j < n?
+  ↓ Yes
+nums1[i] = nums2[j]
+  ↓
+i++, j++
+  ↓
+Go back to j < n
+  ↓ No
+Sort nums1
+  ↓
+END
+*/
